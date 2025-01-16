@@ -54,10 +54,14 @@ from qiskit.providers import BaseBackend
 from qiskit.providers.basicaer.basicaerjob import BasicAerJob
 from .exceptions import BasicAerError
 from .basicaertools import *
+from mpi4py import MPI
 
 logger = logging.getLogger(__name__)
 
-
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+size = comm.Get_size()
+print("The rank size is: ", size)
 class DmSimulatorPy(BaseBackend):
     """Python implementation of a Density Matrix simulator.
     The density matrix is expressed in the orthogonal Pauli basis as
