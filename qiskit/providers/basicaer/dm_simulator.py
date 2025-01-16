@@ -54,7 +54,7 @@ from qiskit.providers import BaseBackend
 from qiskit.providers.basicaer.basicaerjob import BasicAerJob
 from .exceptions import BasicAerError
 from .basicaertools import *
-
+from mpi4py import MPI
 logger = logging.getLogger(__name__)
 
 
